@@ -8,11 +8,10 @@ $(document).ready(function () {
     var myBtn = document.querySelector(".myBtn");
     var chk = document.getElementById('chk');
 
-
+    console.log(bookIsbn)
     // myBtn.addEventListener('click', function(){   
     //     bookList.style.visibility='hidden';
     // });
-
 
     chk.addEventListener('change', () => {
         document.body.classList.toggle('dark');
@@ -51,7 +50,7 @@ $(document).ready(function () {
     $("#searchTerm").val("");
 
     function displayResults(res) {
-
+console.log(res);
         for (var i = 0; i < res.length; i++) {
 
             title = res[i].title;
@@ -60,16 +59,19 @@ $(document).ready(function () {
             review = res[i].review;
             bookImg = res[i].cover;
             categories = res[i].genre;
-
+            bookIsbn= res[i].isbn;
+            console.log(bookIsbn);
             outputList.innerHTML += '<div class="row mt-4">' +
-                formatOutput(bookImg, title, author, review, id) + '</div>';
+                formatOutput(bookImg, title, author, review, id, bookIsbn) + '</div>';
 
         }
     }
 
 
-    function formatOutput(bookImg, title, author, review, id) {
-
+    function formatOutput(bookImg, title, author, review, id, bookIsbn) {
+    
+        // var viewUrl = 'read.html?isbn=' + bookIsbn;
+        // console.log(viewUrl)
 
         var htmlCard = `
     <div class = 'card searchCard' style= 'background: #DF0D51'>
@@ -85,8 +87,10 @@ $(document).ready(function () {
                             <p class="card-text"><b> Author : </b> ${author}</p> 
                             <p class="card-text"><b> Categories : </b> ${categories}</p>  
                             <p class="card-text"><b> Review : </b><textarea class="form-control text" rows="4" >${review}</textarea></p> 
+                            <button  class="btn btn-outline-warning hvr-push" onclick='window.open("${bookIsbn}", "_blank")'>Read More</button>
                             <a target="" href="" id="${id}" class="btn review btn-outline-warning hvr-push">Review</a>
                             <a target="" href="" id="${id}" class="btn remove btn-outline-warning hvr-push">Remove Book </a>
+                            
                         </div>
 
                 </div>

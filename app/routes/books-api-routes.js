@@ -18,7 +18,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/books", async function (req, res) {
-    const { title, genre, author, review, cover} = req.body;
+    const { title, genre, author, review, cover, isbn} = req.body;
   
     try {
       const dbBooks = await db.Book.create({
@@ -27,6 +27,7 @@ module.exports = function (app) {
         author,
         review,
         cover,
+        isbn,
         complete: false,
       });
       res.json(dbBooks);

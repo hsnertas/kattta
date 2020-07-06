@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
     complete: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
+    } ,
+    isbn: {
+      type: DataTypes.STRING,
+      allowNull: true,
     } 
   });
 

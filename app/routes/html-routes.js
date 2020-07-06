@@ -5,7 +5,7 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     res.sendFile("index.html",{root: path.join(__dirname,"../public/views")});
   });
-  app.get("/book.html", function (req, res) {
+  app.get("/book", function (req, res) {
     res.sendFile("book.html",{root: path.join(__dirname,"../public/views")});
   });
   app.get("/user", function (req, res) {
