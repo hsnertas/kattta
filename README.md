@@ -36,7 +36,10 @@ Jonathan Vieira
   ## 📝 License 
   ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
   ## Questions ❓
-  Feel free to contact us with any questions regarding this project!
-
+  Feel free to contact us with any questions regarding this project! 
+  ## #️⃣ Contact
+  ![GitHub Profile Image:](https://avatars0.githubusercontent.com/u/61996861?v=4)
+  * GitHub:[@hsnertas](https://github.com/hsnertas)
+  * Email: hsnertas@gmail.com 
 
 
